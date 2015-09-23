@@ -12,7 +12,7 @@
 		"mmi/mmi-cms": "~1.0.0"
 	},
 	"scripts": {
-		"post-update-cmd": "Mmi\\Command\\Composer::postUpdate",
-		"post-install-cmd": "Mmi\\Command\\Composer::postInstall"
+		"post-update-cmd": "Mmi\\Command\\ComposerInstall::postUpdate",
+		"post-install-cmd": "Mmi\\Command\\ComposerInstall::postInstall"
 	}
 }
