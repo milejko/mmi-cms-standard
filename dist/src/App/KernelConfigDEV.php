@@ -11,9 +11,9 @@
 namespace App;
 
 /**
- * Lokalna konfiguracja aplikacji
+ * Konfiguracja aplikacji DEV
  */
-class KernelConfigLocal extends KernelConfig {
+class KernelConfigDEV extends KernelConfig {
 
 	public function __construct() {
 		parent::__construct();
