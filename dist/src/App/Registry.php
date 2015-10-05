@@ -13,6 +13,6 @@ namespace App;
 /**
  * Rejestr aplikacji
  */
-class Registry extends \Cms\App\Registry {
+class Registry extends \Cms\App\KernelRegistry {
 
 }
