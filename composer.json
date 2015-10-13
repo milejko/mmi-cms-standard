@@ -9,7 +9,7 @@
 		}
 	},
 	"require": {
-		"mmi/mmi-cms": "~1.0.0"
+		"mmi/mmi-cms": "~1.1.0"
 	},
 	"scripts": {
 		"post-update-cmd": "Mmi\\Command\\ComposerInstaller::postUpdate",
