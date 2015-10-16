@@ -16,9 +16,11 @@ namespace App;
 class ConfigPROD extends Config {
 
 	public function __construct() {
+
 		parent::__construct();
+
 		//logowanie błędów
-		$this->log->addInstance(\Mmi\Log\ConfigInstance::factory()->setLevelError());
+		$this->log->addInstance((new \Mmi\Log\ConfigInstance)->setLevelError());
 	}
 
 }

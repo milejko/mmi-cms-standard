@@ -13,13 +13,41 @@ namespace App;
 /**
  * Ogólna konfiguracja aplikacji
  */
-class Config extends \Cms\App\KernelConfig {
+class Config extends \Cms\App\CmsKernelConfig {
 
 	/**
-	 * Konstruktor
+	 * Inicjalizacja konfiguracji
 	 */
 	public function __construct() {
-		parent::__construct();
+
+		//konfiguracja bufora
+		$this->cache = new \Mmi\Cache\CacheConfig;
+
+		//ustawienia loggera
+		$this->log = new \Mmi\Log\LogConfig;
+
+		//konfiguracja LDAP
+		$this->ldap = new \Mmi\Ldap\LdapConfig;
+
+		//konfiguracja pluginów
+		$this->plugins = ['\Cms\App\CmsFrontControllerPlugin'];
+
+		//ustawienia routera
+		$this->router = new \Mmi\Mvc\RouterConfig;
+		$this->router->setRoutes((new \Cms\App\CmsRouterConfig)->toArray());
+
+		//konfiguracja sesji
+		$this->session = new \Mmi\Session\SessionConfig;
+		$this->session->name = 'mmi-cms';
+
+		//konfiguracja nawigatora
+		$this->navigation = new \Mmi\Navigation\NavigationConfig;
+		$this->navigation->addElement(\CmsAdmin\App\CmsNavigationConfig::getMenu());
+
+		//konfiguracja bazy danych
+		$this->db = new \Mmi\Db\DbConfig;
+		$this->db->driver = 'sqlite';
+		$this->db->host = BASE_PATH . '/var/cms-db.sqlite';
 	}
 
 }
