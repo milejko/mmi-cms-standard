@@ -22,6 +22,8 @@ class Config extends \Cms\App\CmsKernelConfig {
 
 		//konfiguracja bufora
 		$this->cache = new \Mmi\Cache\CacheConfig;
+		$this->cache->handler = 'file';
+		$this->cache->path = BASE_PATH . '/var/cache';
 
 		//ustawienia loggera
 		$this->log = new \Mmi\Log\LogConfig;
@@ -38,6 +40,8 @@ class Config extends \Cms\App\CmsKernelConfig {
 
 		//konfiguracja sesji
 		$this->session = new \Mmi\Session\SessionConfig;
+		$this->session->handler = 'files';
+		$this->session->path = BASE_PATH . '/var/session';
 		$this->session->name = 'mmi-cms';
 
 		//konfiguracja nawigatora
