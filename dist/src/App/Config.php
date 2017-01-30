@@ -50,8 +50,10 @@ class Config extends \Cms\App\CmsKernelConfig {
 
 		//konfiguracja bazy danych
 		$this->db = new \Mmi\Db\DbConfig;
-		$this->db->driver = 'sqlite';
-		$this->db->host = BASE_PATH . '/var/cms-db.sqlite';
+		$this->db->driver = 'mysql';
+		$this->db->user = 'mmi-cms';
+		$this->db->password = 'mmi-cms';
+		$this->db->name = 'mmi-cms';
 	}
 
 }
