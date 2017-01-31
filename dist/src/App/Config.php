@@ -20,6 +20,11 @@ class Config extends \Cms\App\CmsKernelConfig {
 	 */
 	public function __construct() {
 
+		//konfiguracja lokalnego bufora
+		$this->localCache = new \Mmi\Cache\CacheConfig;
+		$this->localCache->handler = 'file';
+		$this->localCache->path = BASE_PATH . '/var/cache';
+
 		//konfiguracja bufora
 		$this->cache = new \Mmi\Cache\CacheConfig;
 		$this->cache->handler = 'file';
